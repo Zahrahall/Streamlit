@@ -18,8 +18,18 @@ st.set_page_config(page_title = 'Zahra Dashboard',
                     page_icon = 'bar_chart:',
                     layout = 'wide'
 )
+Create a selectbox for tab selection
+selected_tab = st.sidebar.radio("Select a tab:", ("Main page", ""))
+if selected_tab == "Main page":
+    st.header("Average monthly wages for working male and female over the years")
 
-st.set_option('deprecation.showPyplotGlobalUse', False)
+    # You can add more content here, such as charts or images
+    st.image("https://th.bing.com/th/id/OIP.6PWkkI1Gr4rgGL62sfH-fgHaE8?w=246&h=180&c=7&r=0&o=5&pid=1.7",use_column_width=True)
+
+elif selected_tab == "":
+    st.header("Charts")
+
+    st.set_option('deprecation.showPyplotGlobalUse', False)
 ##################################################################################################################################
 
 # Create a dictionary to store the session state
