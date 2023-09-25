@@ -47,6 +47,6 @@ france_df = df[df['country'] == 'France']
 
 # Line Chart - Trend over Time in France
 st.subheader("Line Chart - Trend over Time in France")
-  line_fig = px.line(france_df, x='year', y='amount_local_currency', color='gender',
+line_fig = px.line(france_df, x='year', y='amount_local_currency', color='gender',
                    labels={'amount_local_currency': 'Amount (Local Currency)'})
 st.plotly_chart(line_fig)
