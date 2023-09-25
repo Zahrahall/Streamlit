@@ -9,6 +9,21 @@ from streamlit import components
 
 
 df = pd.read_csv('average_hourly_earnings_of_female_and_male_employees_(managers)_local_currency.csv')
+scandinavia = ['Denmark','Norway', 'Sweden', 'Finland', 'Iceland', 'Faroe Islands']
+df = df[df['country'].isin(scandinavia)]
+
+# filtering on gender
+'''
+    because the other codes are Total(T),  Gender Gap (G)
+    and not Transgender & Gender Diverse
+'''
+wanted_gender_code = ['F', 'M']
+df = df[df['gender_code'].isin(wanted_gender_code)]
+
+# reset index
+df.reset_index(drop=True, inplace=True)
+
+
 
 st.set_page_config(page_title = 'Zahra Dashboard',
                     page_icon = 'bar_chart:',
