@@ -33,20 +33,20 @@ elif selected_tab == "":
 ##################################################################################################################################
 
  # Create a dictionary to store the session state
-  session_state = st.session_state
+session_state = st.session_state
 
 
-    st.subheader("Bar Chart - Monthly wages by Gender")
+st.subheader("Bar Chart - Monthly wages by Gender")
 bar_fig = px.bar(df, x='year', y='amount_local_currency', color='gender',
                  labels={'amount_local_currency': 'Amount (Local Currency)'})
     st.plotly_chart(bar_fig)
 
 
 # Filter data for France
-  france_df = df[df['country'] == 'France']
+france_df = df[df['country'] == 'France']
 
 # Line Chart - Trend over Time in France
-  st.subheader("Line Chart - Trend over Time in France")
+st.subheader("Line Chart - Trend over Time in France")
   line_fig = px.line(france_df, x='year', y='amount_local_currency', color='gender',
                    labels={'amount_local_currency': 'Amount (Local Currency)'})
-  st.plotly_chart(line_fig)
+st.plotly_chart(line_fig)
