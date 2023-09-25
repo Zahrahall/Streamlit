@@ -33,7 +33,7 @@ elif selected_tab == "":
 ##################################################################################################################################
 
  # Create a dictionary to store the session state
-   session_state = st.session_state
+  session_state = st.session_state
 
 
     st.subheader("Bar Chart - Monthly wages by Gender")
