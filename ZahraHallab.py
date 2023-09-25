@@ -8,7 +8,7 @@ from streamlit import components
 
 
 
-df = pd.read_csv('average_hourly_earnings_of_female_and_male_employees_(managers)_local_currency.csv')
+df = pd.read_csv('average_hourly_earnings_of_female_and_male_employees_(managers)_local_currency1.csv')
 
 
 
