@@ -39,7 +39,7 @@ session_state = st.session_state
 st.subheader("Bar Chart - Monthly wages by Gender")
 bar_fig = px.bar(df, x='year', y='amount_local_currency', color='gender',
                  labels={'amount_local_currency': 'Amount (Local Currency)'})
-    st.plotly_chart(bar_fig)
+st.plotly_chart(bar_fig)
 
 
 # Filter data for France
