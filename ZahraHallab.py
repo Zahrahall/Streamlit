@@ -18,7 +18,7 @@ st.set_page_config(page_title = 'Zahra Dashboard',
                     page_icon = 'bar_chart:',
                     layout = 'wide'
 )
-Create a selectbox for tab selection
+#Create a selectbox for tab selection
 selected_tab = st.sidebar.radio("Select a tab:", ("Main page", ""))
 if selected_tab == "Main page":
     st.header("Average monthly wages for working male and female over the years")
