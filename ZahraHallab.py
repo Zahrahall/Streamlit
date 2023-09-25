@@ -4,9 +4,6 @@ import pandas as pd
 import plotly.express as px
 
 from streamlit import components
-# forex
-from forex_python.converter import CurrencyRates
-cr = CurrencyRates()
 #########################################################################################################################
 
 
