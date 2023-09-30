@@ -2,7 +2,6 @@ import pandas as pd
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import statsmodels.api as sm
 from streamlit import components
 #########################################################################################################################
 
