@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-
+import statsmodels.api as sm
 from streamlit import components
 #########################################################################################################################
 
@@ -42,10 +42,8 @@ bar_fig = px.scatter(df,x='year',y='amount_adj_usd_currency',color='country',siz
 st.plotly_chart(bar_fig)
 
 
-# Filter data for France
-france_df = df[df['country'] == 'France']
-
 # Line Chart - Trend over Time in France
 st.subheader("")
-line_fig = px.scatter(df,x='year',y='amount_adj_usd_currency',color='gender',marginal_y='histogram',marginal_x='box',trendline='ols',template='plotly')
-st.plotly_chart(line_fig)
+line =px.scatter(df,x='year',y='amount_adj_usd_currency',color='country',size='amount_adj_usd_currency',hover_name='gender')
+
+st.plotly_chart(line)
