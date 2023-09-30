@@ -36,8 +36,7 @@ session_state = st.session_state
 
 
 st.subheader("Bar Chart - Monthly wages by Gender")
-bar_fig = px.scatter(df,x='year',y='amount_adj_usd_currency',color='country',size='amount_adj_usd_currency',hover_name='gender')
-
+bar_fig = px.scatter(df,x='country',y='amount_adj_usd_currency',color='gender',hover_name='gender')
 st.plotly_chart(bar_fig)
 
 
