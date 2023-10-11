@@ -21,8 +21,8 @@ def front_page():
   st.header("Average monthly wages for working male and female over the years")
 
     # You can add more content here, such as charts or images
-    st.image("https://th.bing.com/th/id/OIP.6PWkkI1Gr4rgGL62sfH-fgHaE8?w=246&h=180&c=7&r=0&o=5&pid=1.7",use_column_width=True)
-    st.write('throughout the years, it is widely known that female monthly wages are less than male monthly wages. what about today?')
+  st.image("https://th.bing.com/th/id/OIP.6PWkkI1Gr4rgGL62sfH-fgHaE8?w=246&h=180&c=7&r=0&o=5&pid=1.7",use_column_width=True)
+  st.write('throughout the years, it is widely known that female monthly wages are less than male monthly wages. what about today?')
 def page_1():
  st.header("Page 1")
   st.subheader("")
