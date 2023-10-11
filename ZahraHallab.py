@@ -36,8 +36,13 @@ session_state = st.session_state
 
 
 st.subheader("Bar Chart - Monthly wages by Gender")
-bar_fig = px.scatter(df,x='country',y='amount_adj_usd_currency',color='gender',hover_name='gender')
-st.plotly_chart(bar_fig)
+x_variable = st.selectbox("Select X-Axis Variable:", options=['country', 'amount_adj_usd_currency'])
+y_variable = st.selectbox("Select Y-Axis Variable:", options=['amount_adj_usd_currency'])
+color_variable = st.selectbox("Select Color Variable:", options=['gender'])
+
+# Create the Plotly chart based on user selections
+bar_fig = px.scatter(df, x=x_variable, y=y_variable, color=color_variable, hover_name=color_variable)
+
 
 
 # Line Chart - Trend over Time in France
