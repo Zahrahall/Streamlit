@@ -44,7 +44,7 @@ selected_genders = st.sidebar.multiselect("Select Genders:", df['gender'].unique
 # Filter the data based on selected countries and genders
 filtered_df = df[(df['country'].isin(selected_countries)) & (df['gender'].isin(selected_genders))]
 # Create a separate sidebar for the graph
-graph_sidebar = st.sidebar
+
 
 
 
@@ -52,7 +52,7 @@ graph_sidebar = st.sidebar
 bar_fig = px.scatter(filtered_df,x='country',y='amount_adj_usd_currency',color='gender',hover_name='gender')
 
 # Display the Plotly chart in the separate sidebar
-graph_sidebar.plotly_chart(bar_fig)
+st.plotly_chart(bar_fig)
 
 # Line Chart - Trend over Time in France
 st.subheader("")
