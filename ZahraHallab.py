@@ -39,9 +39,12 @@ st.subheader("Bar Chart - Monthly wages by Gender")
 # Create a sidebar for filters
 st.sidebar.header("select a country")
 selected_countries = st.sidebar.multiselect("Select Countries:", df['country'].unique())
+selected_genders = st.sidebar.multiselect("Select Genders:", df['gender'].unique())
 
-# Filter the data based on selected countries
-filtered_df = df[df['country'].isin(selected_countries)]
+# Filter the data based on selected countries and genders
+filtered_df = df[(df['country'].isin(selected_countries)) & (df['gender'].isin(selected_genders))]
+
+
 
 
 bar_fig = px.scatter(filtered_df,x='country',y='amount_adj_usd_currency',color='gender',hover_name='gender')
