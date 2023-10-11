@@ -60,8 +60,7 @@ elif page == 'Page 1':
 elif page == 'Page 2':
     page_2()
 
-"ations":
-    st.header("Charts")
+
 
     st.set_option('deprecation.showPyplotGlobalUse', False)
 ##################################################################################################################################
