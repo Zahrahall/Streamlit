@@ -16,16 +16,17 @@ def front_page():
     st.write('Throughout the years, it is widely known that female monthly wages are less than male monthly wages. What about today?')
 
 def page_1():
-    st.header("Page 1")
-    st.subheader("")
-     # Year slicer
-    selected_year = st.slider("Select Year", min_value=df['year'].min(), max_value=df['year'].max(), value=df['year'].min())
+   st.header("Page 1")
+    st.sidebar.subheader("Year Slicer")
+    
+    # Year slicer in the sidebar
+    selected_year = st.sidebar.slider("Select Year", min_value=df['year'].min(), max_value=df['year'].max(), value=df['year'].min())
     
     # Filter the data based on the selected year
     filtered_df = df[df['year'] == selected_year]
-    line = px.scatter(df, x='year', y='amount_adj_usd_currency', color='country', size='amount_adj_usd_currency', hover_name='gender')
+    
+    line = px.scatter(filtered_df, x='year', y='amount_adj_usd_currency', color='country', size='amount_adj_usd_currency', hover_name='gender')
     st.plotly_chart(line)
-
 def page_2():
     st.header("Page 2")
     st.subheader("Bar Chart - Monthly wages by Gender")
