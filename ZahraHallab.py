@@ -17,16 +17,31 @@ def front_page():
 
 def page_1():
     st.header("Page 1")
-    st.sidebar.subheader("Year Slicer")
+    st.sidebar.subheader("Year Playback")
     
     # Year slicer in the sidebar
     selected_year = st.sidebar.slider("Select Year", min_value=df['year'].min(), max_value=df['year'].max(), value=df['year'].min())
+    
+    # Playback control
+    play = st.sidebar.checkbox("Auto-play Years")
     
     # Filter the data based on the selected year
     filtered_df = df[df['year'] == selected_year]
     
     line = px.scatter(filtered_df, x='year', y='amount_adj_usd_currency', color='country', size='amount_adj_usd_currency', hover_name='gender')
+    
     st.plotly_chart(line)
+    
+    if play:
+        # Auto-play through the years
+        while selected_year < df['year'].max():
+            time.sleep(1)  # Pause for 1 second between years
+            selected_year += 1
+            st.sidebar.slider("Select Year", min_value=df['year'].min(), max_value=df['year'].max(), value=selected_year)
+            st.empty()  # Clear the plot to update it with the new year
+            filtered_df = df[df['year'] == selected_year]
+            line = px.scatter(filtered_df, x='year', y='amount_adj_usd_currency', color='country', size='amount_adj_usd_currency', hover_name='gender')
+            st.plotly_chart(line)
 
 def page_2():
     st.header("Page 2")
