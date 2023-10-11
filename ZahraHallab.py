@@ -25,7 +25,7 @@ if selected_tab == "Main page":
     # You can add more content here, such as charts or images
     st.image("https://th.bing.com/th/id/OIP.6PWkkI1Gr4rgGL62sfH-fgHaE8?w=246&h=180&c=7&r=0&o=5&pid=1.7",use_column_width=True)
     st.write('throughout the years, it is widely known that female monthly wages are less than male monthly wages. what about today?')
-elif selected_tab == "":
+elif selected_tab == "Visualizations":
     st.header("Charts")
 
     st.set_option('deprecation.showPyplotGlobalUse', False)
