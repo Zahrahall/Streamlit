@@ -16,7 +16,7 @@ def front_page():
     st.write('Throughout the years, it is widely known that female monthly wages are less than male monthly wages. What about today?')
 
 def page_1():
-    st.header("Page 1")
+     st.header("Page 1")
     st.sidebar.subheader("Year Slicer")
     
     # Year slicer in the sidebar
@@ -27,6 +27,7 @@ def page_1():
     
     line = px.scatter(filtered_df, x='year', y='amount_adj_usd_currency', color='country', size='amount_adj_usd_currency', hover_name='gender')
     st.plotly_chart(line)
+
 def page_2():
     st.header("Page 2")
     st.subheader("Bar Chart - Monthly wages by Gender")
