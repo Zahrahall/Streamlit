@@ -16,7 +16,7 @@ def front_page():
     st.write('Throughout the years, it is widely known that female monthly wages are less than male monthly wages. What about today?')
 
 def page_1():
-   st.header("Page 1")
+    st.header("Page 1")
     st.sidebar.subheader("Year Slicer")
     
     # Year slicer in the sidebar
