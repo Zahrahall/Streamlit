@@ -24,33 +24,33 @@ def front_page():
     st.image("https://th.bing.com/th/id/OIP.6PWkkI1Gr4rgGL62sfH-fgHaE8?w=246&h=180&c=7&r=0&o=5&pid=1.7",use_column_width=True)
     st.write('throughout the years, it is widely known that female monthly wages are less than male monthly wages. what about today?')
 def page_1():
-  st.header("Page 1")
-st.subheader("")
-line =px.scatter(df,x='year',y='amount_adj_usd_currency',color='country',size='amount_adj_usd_currency',hover_name='gender')
+ st.header("Page 1")
+  st.subheader("")
+  line =px.scatter(df,x='year',y='amount_adj_usd_currency',color='country',size='amount_adj_usd_currency',hover_name='gender')
 
-st.plotly_chart(line)
+  st.plotly_chart(line)
 
 def page_2():
-    st.header("Page 2")
-  st.subheader("Bar Chart - Monthly wages by Gender")
+  st.header("Page 2")
+    st.subheader("Bar Chart - Monthly wages by Gender")
 # Create a sidebar for filters
-st.sidebar.header("select a country")
-selected_countries = st.sidebar.multiselect("Select Countries:", df['country'].unique())
-selected_genders = st.sidebar.multiselect("Select Genders:", df['gender'].unique())
+   st.sidebar.header("select a country")
+   selected_countries = st.sidebar.multiselect("Select Countries:", df['country'].unique())
+   selected_genders = st.sidebar.multiselect("Select Genders:", df['gender'].unique())
 
 # Filter the data based on selected countries and genders
-filtered_df = df[(df['country'].isin(selected_countries)) & (df['gender'].isin(selected_genders))]
+   filtered_df = df[(df['country'].isin(selected_countries)) & (df['gender'].isin(selected_genders))]
 # Create a separate sidebar for the graph
 
 
 
 
 
-bar_fig = px.scatter(filtered_df,x='country',y='amount_adj_usd_currency',color='gender',hover_name='gender')
+   bar_fig = px.scatter(filtered_df,x='country',y='amount_adj_usd_currency',color='gender',hover_name='gender')
 
 # Display the Plotly chart in the separate sidebar
-st.plotly_chart(bar_fig)
-st.sidebar.title("Navigation")
+  st.plotly_chart(bar_fig)
+
 page = st.sidebar.radio("Select a Page", ['Front Page', 'Page 1', 'Page 2'])
 if page == 'Front Page':
     front_page()
