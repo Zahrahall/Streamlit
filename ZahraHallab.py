@@ -18,6 +18,11 @@ def front_page():
 def page_1():
     st.header("Page 1")
     st.subheader("")
+     # Year slicer
+    selected_year = st.slider("Select Year", min_value=df['year'].min(), max_value=df['year'].max(), value=df['year'].min())
+    
+    # Filter the data based on the selected year
+    filtered_df = df[df['year'] == selected_year]
     line = px.scatter(df, x='year', y='amount_adj_usd_currency', color='country', size='amount_adj_usd_currency', hover_name='gender')
     st.plotly_chart(line)
 
