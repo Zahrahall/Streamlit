@@ -31,7 +31,7 @@ def page_1():
         df, x='year', y='amount_adj_usd_currency', color='country', size='amount_adj_usd_currency',
         hover_name='gender', animation_frame='year', animation_group='country',
         log_x=True, range_x=[2010, 2025], range_y=[0, 400]
-          st.plotly_chart(scatter_fig)
+    st.plotly_chart(scatter_fig)
 
     
     if play:
