@@ -17,34 +17,17 @@ def front_page():
     st.write('The data reveals a pattern of inequality, with female monthly wages consistently trailing behind those of their male counterparts. Despite ongoing efforts to address gender wage disparities, this study finds that a gender pay gap still persists, raising questions about the root causes and potential solutions. It is evident that economic and societal factors continue to influence the wage differential between genders in European countries.The research employs statistical analysis and visualization techniques to provide insights into the wage gaps, illustrating how they vary across countries and over the years.')
 
 def page_1():
-    st.header("monthly wages from 2009-2022")
-    st.sidebar.subheader("Year Playback")
+    st.header("Page 1 - Animated Scatter Plot")
     
-    # Year slicer in the sidebar
-    selected_year = st.sidebar.slider("Select Year", min_value=df['year'].min(), max_value=df['year'].max(), value=df['year'].min())
-    
-    # Playback control
-    play = st.sidebar.checkbox("Auto-play Years")
-    
-    # Filter the data based on the selected year
+    # Create an animated scatter plot
     scatter_fig = px.scatter(
         df, x='year', y='amount_adj_usd_currency', color='country', size='amount_adj_usd_currency',
         hover_name='gender', animation_frame='year', animation_group='country',
         log_x=True, range_x=[2010, 2025], range_y=[0, 400]
-    st.plotly_chart(scatter_fig)
-
+    )
     
-    if play:
-        # Auto-play through the years
-        while selected_year < df['year'].max():
-            time.sleep(1)  # Pause for 1 second between years
-            selected_year += 1
-            st.sidebar.slider("Select Year", min_value=df['year'].min(), max_value=df['year'].max(), value=selected_year)
-            st.empty()  # Clear the plot to update it with the new year
-            filtered_df = df[df['year'] == selected_year]
-            line = px.scatter(filtered_df, x='year', y='amount_adj_usd_currency', color='country', size='amount_adj_usd_currency', hover_name='gender')
-            st.plotly_chart(line)
-
+    # Display the animated scatter plot
+    st.plotly_chart(scatter_fig)
 def page_2():
     st.header("Compare monthly wages by country by gender ")
     st.subheader("Bar Chart - Monthly wages by Gender")
