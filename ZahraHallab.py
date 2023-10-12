@@ -28,6 +28,7 @@ def page_1():
     
     # Display the animated scatter plot
     st.plotly_chart(scatter_fig)
+    st.write('in this graph we can see the changes that occured through out the above years, iceland have majorly increased wages, yet we can still spot the gap between female wages and male wages')
 def page_2():
     st.header("Compare monthly wages by country by gender ")
     st.subheader("Bar Chart - Monthly wages by Gender")
@@ -37,6 +38,9 @@ def page_2():
     filtered_df = df[(df['country'].isin(selected_countries)) & (df['gender'].isin(selected_genders))]
     bar_fig = px.scatter(filtered_df, x='country', y='amount_adj_usd_currency', color='gender', hover_name='gender')
     st.plotly_chart(bar_fig)
+    st.write('in this graph we can compare wages in these different 5 europeoan countries and check femaleand male monthly salaries in each different countries.again we can spot that Iceland have a significant increase in wages in the last couple of years yet male wage is still significantly higher than female monthly wage')
+    st.write('why?')
+    st.write('This may be due to several factors economical or societal')
 
 page = st.sidebar.radio("Select a Page", ['Front Page', 'Page 1', 'Page 2'])
 if page == 'Front Page':
