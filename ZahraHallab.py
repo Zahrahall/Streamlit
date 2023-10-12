@@ -22,13 +22,13 @@ def page_1():
     # Create an animated scatter plot
     scatter_fig = px.scatter(
         df, x='year', y='amount_adj_usd_currency', color='country', size='amount_adj_usd_currency',
-        hover_name='gender', animation_frame='year', animation_group='country',
+        hover_name='country', animation_frame='year', animation_group='country',
         log_x=True, range_x=[2010, 2025], range_y=[0, 400]
     )
     
     # Display the animated scatter plot
     st.plotly_chart(scatter_fig)
-    st.write('in this graph we can see the changes that occured through out the above years, iceland have majorly increased wages, yet we can still spot the gap between female wages and male wages')
+    st.write('in this graph we can see the changes that occured through out the above years, iceland have majorly increased wages in 2019')
 def page_2():
     st.header("Compare monthly wages by country by gender ")
     st.subheader("Bar Chart - Monthly wages by Gender")
