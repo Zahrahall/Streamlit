@@ -16,7 +16,7 @@ def front_page():
     st.write('Throughout the years, it is widely known that female monthly wages are less than male monthly wages. What about today?')
 
 def page_1():
-    st.header("Page 1")
+    st.header("monthly wages from 2009-2022")
     st.sidebar.subheader("Year Playback")
     
     # Year slicer in the sidebar
@@ -44,7 +44,7 @@ def page_1():
             st.plotly_chart(line)
 
 def page_2():
-    st.header("Page 2")
+    st.header("Compare monthly wages by country by gender ")
     st.subheader("Bar Chart - Monthly wages by Gender")
     st.sidebar.header("Select a country")
     selected_countries = st.sidebar.multiselect("Select Countries:", df['country'].unique())
