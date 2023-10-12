@@ -12,7 +12,7 @@ st.set_page_config(
 
 def front_page():
     st.header("Average monthly wages for working male and female over the years")
-    st.image("https://th.bing.com/th/id/OIP.6PWkkI1Gr4rgGL62sfH-fgHaE8?w=246&h=180&c=7&r=0&o=5&pid=1.7", use_column_width=True)
+    st.image('https://www.suzannevenker.com/wp-content/uploads/2019/09/menandwomen.jpeg', use_column_width=True)
     st.write('Throughout the years, it is widely known that female monthly wages are less than male monthly wages. What about today?')
     st.write('The data reveals a pattern of inequality, with female monthly wages consistently trailing behind those of their male counterparts. Despite ongoing efforts to address gender wage disparities, this study finds that a gender pay gap still persists, raising questions about the root causes and potential solutions. It is evident that economic and societal factors continue to influence the wage differential between genders in European countries.The research employs statistical analysis and visualization techniques to provide insights into the wage gaps, illustrating how they vary across countries and over the years.')
 
